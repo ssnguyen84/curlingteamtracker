@@ -1,0 +1,14 @@
+Curling Team Tracker
+
+The purpose of the project is to create an application to track the performance of curling teams and individual players within that team.
+
+Class Team
+	Attributes: teamName, currentTeammates, eventsAttendance, moneyEarned, standings, provinceRepresentation.
+	
+Class Player
+	Attributes: firstName, lastName, shootingPerformance, previousTeam, currentTeam, currentProvince, previousProvince, eventHistory, moneyEarnedIndividual
+	
+Use Cases:
+	Calculate money earned by each player.
+	Calculate shooting performance over the year.
+	Change team player.
