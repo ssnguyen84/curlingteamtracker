@@ -13,4 +13,3 @@ Use Cases:
 	Calculate shooting performance over the year.
 	Change team player.
 	
-	Test github commit
