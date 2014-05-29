@@ -21,7 +21,7 @@ public class CreateHelper {
 
 		for (int i = 0; i < num; i++) {
 			Player player = new Player();
-			player.setId(rng.nextInt(1000)); // will have to change this to make each id unique
+			player.setId(i+1);
 			player.setFirstName(strs[rng.nextInt(13)]);
 			player.setLastName(strs[rng.nextInt(13)]);
 			player.setCurrentProvince(prov[rng.nextInt(13)]);

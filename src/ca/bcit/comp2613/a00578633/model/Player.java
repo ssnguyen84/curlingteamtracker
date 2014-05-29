@@ -33,11 +33,11 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "First name: " + firstName + ", Last name: " + lastName
+		return "ID: " + id + ", First name: " + firstName + ", Last name: " + lastName
 				+ ", Current Province: " + currentProvince
 				+ ", Previous Province: " + previousProvince
 				+ ", Performance: " + shootingPerformance + ", Earnings: "
-				+ moneyEarned + ", ID: " + id;
+				+ moneyEarned;
 	}
 
 	public String getFirstName() {
