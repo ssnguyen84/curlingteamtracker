@@ -10,8 +10,7 @@ public class Player {
 	private String previousTeam;
 	private Integer shootingPerformance;
 	private Integer moneyEarned;
-
-	// private String eventHistory; should be an arrayList
+	private Integer id;
 
 	public Player() {
 
@@ -19,7 +18,7 @@ public class Player {
 
 	public Player(String firstName, String lastName, String currentProvince,
 			String previousProvince, String currentTeam, String previousTeam,
-			Integer shootingPerformance, Integer moneyEarned) {
+			Integer shootingPerformance, Integer moneyEarned, Integer id) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -29,6 +28,7 @@ public class Player {
 		this.previousTeam = previousTeam;
 		this.shootingPerformance = shootingPerformance;
 		this.moneyEarned = moneyEarned;
+		this.id = id;
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Player {
 				+ ", Current Province: " + currentProvince
 				+ ", Previous Province: " + previousProvince
 				+ ", Performance: " + shootingPerformance + ", Earnings: "
-				+ moneyEarned;
+				+ moneyEarned + ", ID: " + id;
 	}
 
 	public String getFirstName() {
@@ -102,6 +102,14 @@ public class Player {
 
 	public void setMoneyEarned(int moneyEarned) {
 		this.moneyEarned = moneyEarned;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }

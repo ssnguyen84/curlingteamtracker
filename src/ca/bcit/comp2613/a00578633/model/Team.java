@@ -7,26 +7,27 @@ public class Team {
 	private String provinceRepresentation;
 	private Integer standing;
 	private Integer moneyEarned;
+	private Integer id;
 
-	// private String eventsAttended; should be arrayList
 
 	public Team() {
 
 	}
 
 	public Team(String teamName, String currentTeammates,
-			String provinceRepresentation, Integer standing, Integer moneyEarned) {
+			String provinceRepresentation, Integer standing, Integer moneyEarned, Integer id) {
 		super();
 		this.teamName = teamName;
 		this.currentTeammates = currentTeammates;
 		this.provinceRepresentation = provinceRepresentation;
 		this.standing = standing;
 		this.moneyEarned = moneyEarned;
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "Team Name: " + teamName + ", ";
+		return "Team Name: " + teamName + ", Players: " + currentTeammates + ", Province: " + provinceRepresentation + ", Standing: " + standing + ", Money Earned: " + moneyEarned;
 	}
 
 	public String getTeamName() {
@@ -67,6 +68,14 @@ public class Team {
 
 	public void setMoneyEarned(int moneyEarned) {
 		this.moneyEarned = moneyEarned;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }
