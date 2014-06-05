@@ -40,7 +40,9 @@ public class CreatePlayer {
 			
 			player.setPreviousTeam(team[rng.nextInt(20)]);
 			player.setShootingPerformance(rng.nextInt(100));
+			
 			CreatePlayer.getPlayerPerformanceTest(player);  				// 1 out of 100 chance of being zero - 1%
+			
 			player.setMoneyEarned(rng.nextInt(1000));
 			player.setPosition(position[rng.nextInt(4)]);
 			players.add(player);			
