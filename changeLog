@@ -1,0 +1,16 @@
+Asn#3 Change Log; June 6, 2014:
+
+Moved the following methods from the CreateHelper class to Player class:
+    searchPlayersByCurrentProvince();
+    searchPlayersByLastNameRegex();
+    printPlayers();
+    
+    This was done to maintain organization.
+    
+Rename CreateHelper class to CreatePlayer:
+    This was changed to make it clear what the class does.
+    
+Created Enum Position:
+    This describes the player positions on a curling team.
+    
+Added exceptions. Still needs lots of work

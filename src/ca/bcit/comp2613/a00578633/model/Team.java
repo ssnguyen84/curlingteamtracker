@@ -2,23 +2,19 @@ package ca.bcit.comp2613.a00578633.model;
 
 public class Team {
 
-	private String teamName;
-	private String currentTeammates; // should be arrayList
+	private String teamName; 
 	private String provinceRepresentation;
 	private Integer standing;
 	private Integer moneyEarned;
 	private Integer id;
 
-
 	public Team() {
 
 	}
 
-	public Team(String teamName, String currentTeammates,
-			String provinceRepresentation, Integer standing, Integer moneyEarned, Integer id) {
+	public Team(String teamName, String provinceRepresentation, Integer standing, Integer moneyEarned, Integer id) {
 		super();
 		this.teamName = teamName;
-		this.currentTeammates = currentTeammates;
 		this.provinceRepresentation = provinceRepresentation;
 		this.standing = standing;
 		this.moneyEarned = moneyEarned;
@@ -27,7 +23,8 @@ public class Team {
 
 	@Override
 	public String toString() {
-		return "Team Name: " + teamName + ", Players: " + currentTeammates + ", Province: " + provinceRepresentation + ", Standing: " + standing + ", Money Earned: " + moneyEarned;
+		return "Team Name: " + teamName + ", Players: " + ", Province: " + provinceRepresentation + ", Standing: " + standing
+				+ ", Money Earned: " + moneyEarned;
 	}
 
 	public String getTeamName() {
@@ -36,14 +33,6 @@ public class Team {
 
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
-	}
-
-	public String getCurrentTeammates() {
-		return currentTeammates;
-	}
-
-	public void setCurrentTeammates(String currentTeammates) {
-		this.currentTeammates = currentTeammates;
 	}
 
 	public String getProvinceRepresentation() {
@@ -58,7 +47,7 @@ public class Team {
 		return standing;
 	}
 
-	public void setStanding(int standing) {
+	public void setStanding(Integer standing) {
 		this.standing = standing;
 	}
 
@@ -66,7 +55,7 @@ public class Team {
 		return moneyEarned;
 	}
 
-	public void setMoneyEarned(int moneyEarned) {
+	public void setMoneyEarned(Integer moneyEarned) {
 		this.moneyEarned = moneyEarned;
 	}
 
