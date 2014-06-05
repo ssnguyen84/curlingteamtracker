@@ -2,7 +2,7 @@ package ca.bcit.comp2613.a00578633.model;
 
 public class Team {
 
-	private String teamName; 
+	private String teamName;
 	private String provinceRepresentation;
 	private Integer standing;
 	private Integer moneyEarned;

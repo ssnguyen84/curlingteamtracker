@@ -31,31 +31,33 @@ public class CreatePlayer {
 			player.setCurrentProvince(prov[rng.nextInt(13)]);
 			player.setPreviousProvince(prov[rng.nextInt(13)]);
 			player.setCurrentTeam(team[rng.nextInt(20)]);
+			CreatePlayer.getTeamQQ(player);									// 1 out of 20 chance of being QQ - 5%
 			player.setPreviousTeam(team[rng.nextInt(20)]);
-			player.setShootingPerformance(rng.nextInt(100)); 
+			player.setShootingPerformance(rng.nextInt(100));
+			CreatePlayer.getPlayerPerformanceTest(player);  				// 1 out of 100 chance of being zero - 1%
 			player.setMoneyEarned(rng.nextInt(1000));
 			player.setPosition(position[rng.nextInt(4)]);
-			try{
-				if(player.getShootingPerformance() == 0){ 		// 1 out of 100 chance of being zero
-					throw new PlayerPerformanceException();
-				}
-				if(player.getCurrentTeam().equals("QQ")){				// 1 out of 20 chance of QQ
-					throw new TeamQQException();
-				}
-				
-			} catch (PlayerPerformanceException e){
-				System.out.println(player.toString());
-				System.out.println("Error: Player Peformance cannot be zero");
-				System.exit(0);
-			} catch (TeamQQException e){
-				System.out.println(player.toString());
-				System.out.println("Team QQ should not exist");
-				System.exit(0);
-			}
 			players.add(player);			
-		}
-		
+		}	
 		return players;		
 	}
-
+	/*
+	 * Test Exception Method - not to be used after asn3
+	 */
+	public static void getPlayerPerformanceTest(Player player) throws PlayerPerformanceException {
+		if(player.getShootingPerformance() == 0){
+			System.out.println(player.toString());
+			throw new PlayerPerformanceException();
+		}	
+	}
+	
+	/*
+	 * Test Exception Method - not to be used after asn3
+	 */
+	public static void getTeamQQ(Player player) throws TeamQQException {          
+		if(player.getCurrentTeam().equals("QQ")){
+			System.out.println(player.toString());
+			throw new TeamQQException();
+		}
+	}
 }

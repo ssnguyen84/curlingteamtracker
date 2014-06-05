@@ -2,8 +2,6 @@ package ca.bcit.comp2613.a00578633.model;
 
 import java.util.ArrayList;
 
-import ca.bcit.comp2613.a00578633.util.PlayerPerformanceException;
-
 public class Player {
 
 	private String firstName;
@@ -117,7 +115,7 @@ public class Player {
 		this.previousTeam = previousTeam;
 	}
 
-	public int getShootingPerformance() throws PlayerPerformanceException {
+	public int getShootingPerformance() {
 		return shootingPerformance;
 	}
 
