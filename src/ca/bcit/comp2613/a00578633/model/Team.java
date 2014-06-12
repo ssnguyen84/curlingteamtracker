@@ -23,8 +23,8 @@ public class Team {
 
 	@Override
 	public String toString() {
-		return "Team Name: " + teamName + ", Players: " + ", Province: " + provinceRepresentation + ", Standing: " + standing
-				+ ", Money Earned: " + moneyEarned;
+		return "Team Name: " + teamName + ", Players: " + ", Province: " + provinceRepresentation + ", Standing: " + standing + ", Money Earned: "
+				+ moneyEarned;
 	}
 
 	public String getTeamName() {
