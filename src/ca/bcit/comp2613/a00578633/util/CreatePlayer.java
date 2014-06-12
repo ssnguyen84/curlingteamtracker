@@ -32,17 +32,18 @@ public class CreatePlayer {
 			player.setPreviousProvince(prov[rng.nextInt(13)]);
 			player.setCurrentTeam(team[rng.nextInt(20)]);
 			
+			/*
 			try{
 				CreatePlayer.getTeamQQ(player);								// 1 out of 20 chance of being QQ - 5%
 			} catch (TeamQQException e) {
 				System.err.println("Caught RuntimeException: Player cannot be currently on Team QQ");
 			}
-			
+			*/
 			player.setPreviousTeam(team[rng.nextInt(20)]);
 			player.setShootingPerformance(rng.nextInt(100));
-			
+			/*
 			CreatePlayer.getPlayerPerformanceTest(player);  				// 1 out of 100 chance of being zero - 1%
-			
+			*/
 			player.setMoneyEarned(rng.nextInt(1000));
 			player.setPosition(position[rng.nextInt(4)]);
 			players.add(player);			

@@ -1,4 +1,14 @@
-Asn#3 Change Log; June 6, 2014:
+Asn#4 Change Log: June 11, 2014:
+
+Removed the following methods from the CreatePlayer class:
+    getShootingPerformance();
+    getTeamQQ();
+
+Added Comparator to TestDriver
+
+
+
+Asn#3 Change Log: June 6, 2014:
 
 Moved the following methods from the CreateHelper class to Player class:
     searchPlayersByCurrentProvince();
