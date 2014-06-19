@@ -184,25 +184,22 @@ public class Wow {
 	// TODO
 	// Your turn!
 	// implement getLevelOfMissingCharacter
-	/*
-	 * public static int getLevelOfMissingCharacter() { ArrayList<Character> characters = myCharactersAfterMyArchNemesisHacksIntoMyAccount();
-	 * 
-	 * int [] val = new int[85];
-	 * 
-	 * for(Character character: characters){ val[character.getLevel() - 1] = character.getLevel(); }
-	 * 
-	 * for(int i = 0; i < 85; i++){ if(val[i] == 0){ System.out.println(i+1); return i+1; } }
-	 * 
-	 * return -1; }
-	 */
-
 	public static int getLevelOfMissingCharacter() {
 		ArrayList<Character> characters = myCharactersAfterMyArchNemesisHacksIntoMyAccount();
+
+		int[] val = new int[85];
+
+		for (Character character : characters) {
+			val[character.getLevel() - 1] = character.getLevel();
+		}
+
+		for (int i = 0; i < 85; i++) {
+			if (val[i] == 0) {
+				return i + 1;
+			}
+		}
 
 		return -1;
 	}
 
-	public void quicksort(int low, int high) {
-
-	}
 }
