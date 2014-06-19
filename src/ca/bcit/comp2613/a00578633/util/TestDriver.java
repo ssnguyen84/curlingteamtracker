@@ -4,19 +4,40 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import ca.bcit.comp2613.a00578633.model.Player;
 
 public class TestDriver {
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("Number of players generated: 25");
+
+		PropertyConfigurator.configure(TestDriver.class.getResourceAsStream("log4j.properties"));
+		Logger log = Logger.getLogger(TestDriver.class);
+
+		PropertiesConfiguration propertiesConfiguration = new PropertiesConfiguration();
+		propertiesConfiguration.load(TestDriver.class.getResourceAsStream("uberPlayer.properties"));
+
+		//Usecase: load a default player from uberPlayer.properties
+		Player uberPlayer = new Player(propertiesConfiguration.getString("firstName"), propertiesConfiguration.getString("lastName"),
+				propertiesConfiguration.getString("currentProvince"));
+		
+		//note: having trouble with propertiesConfiguration.getInt("shootingPerformance") - doesn't map to an Integer object 
+		
+		log.info("Create Player from uberPlayer.properties");
+		log.info(uberPlayer);
+		System.out.println(); // Left in for easier printout readability
+
+		log.info("Number of players generated: 25");
 		ArrayList<Player> players = CreatePlayer.createPlayers(25); // change number of instances
 		System.out.println();
 
-		System.out.println("Players sorted by Current Province [ASC], Last Name [ASC], First Name [ASC]");
+		log.info("Players sorted by Current Province [ASC], Last Name [ASC], First Name [ASC]");
 		sortProvinceLastNameFirstName(players);
 		System.out.println();
-		System.out.println("Players sorted by Performance [DESC], Earnings [DESC]");
+		log.info("Players sorted by Performance [DESC], Earnings [DESC]");
 		sortPerformanceEarnings(players);
 
 	}
@@ -25,6 +46,8 @@ public class TestDriver {
 	 * Takes an ArrayList <Player> sorting them by currentProvince, lastName, then firstName in ASC order.
 	 */
 	public static void sortProvinceLastNameFirstName(ArrayList<Player> players) {
+		Logger log = Logger.getLogger(TestDriver.class);
+
 		ArrayList<Player> playerList = new ArrayList<>();
 		playerList.addAll(players);
 
@@ -45,7 +68,7 @@ public class TestDriver {
 
 		Collections.sort(playerList, list);
 		for (Player player : playerList) {
-			System.out.println(player);
+			log.info(player);
 		}
 	}
 
@@ -53,6 +76,8 @@ public class TestDriver {
 	 * Takes an ArrayList <Player> sorting them by shootingPerformance and MoneyEarned in DESC order
 	 */
 	public static void sortPerformanceEarnings(ArrayList<Player> players) {
+		Logger log = Logger.getLogger(TestDriver.class);
+
 		ArrayList<Player> playerList = new ArrayList<>();
 		playerList.addAll(players);
 
@@ -70,7 +95,7 @@ public class TestDriver {
 
 		Collections.sort(playerList, list);
 		for (Player player : playerList) {
-			System.out.println(player);
+			log.info(player);
 		}
 	}
 

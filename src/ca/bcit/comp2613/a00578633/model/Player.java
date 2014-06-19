@@ -2,6 +2,10 @@ package ca.bcit.comp2613.a00578633.model;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
+import ca.bcit.comp2613.a00578633.util.TestDriver;
+
 public class Player {
 
 	private String firstName;
@@ -14,11 +18,18 @@ public class Player {
 	private Integer moneyEarned;
 	private Integer id;
 	private Position position;
-
-	public Player() {
-
+	
+	public Player(){
+		
 	}
 
+	public Player(String firstName, String lastName, String currentProvince) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.currentProvince = currentProvince;
+	}
+	
 	public Player(String firstName, String lastName, String currentProvince, String previousProvince, String currentTeam, String previousTeam,
 			Integer shootingPerformance, Integer moneyEarned, Position position, Integer id) {
 		super();
@@ -41,7 +52,7 @@ public class Player {
 				+ ", Performance: " + shootingPerformance + ", Earnings: " + moneyEarned + ", Position: " + position;
 	}
 
-	public static ArrayList<Player> searchPlayersByCurrentProvince(ArrayList<Player> players, String currentProvince) {
+	public static ArrayList<Player> searchPlayersByCurrentProvince(ArrayList<Player> players, String currentProvince) {		
 		ArrayList<Player> searchCurProv = new ArrayList<>();
 		for (Player player : players) {
 			if (player.getCurrentProvince().equals(currentProvince)) {
@@ -52,18 +63,20 @@ public class Player {
 	}
 
 	public static ArrayList<Player> searchPlayersByLastNameRegex(ArrayList<Player> players, String regex) {
+		Logger log = Logger.getLogger(TestDriver.class);
 		ArrayList<Player> searchPlayerByLastNameRegex = new ArrayList<>();
 		for (Player player : players) {
 			if (player.getLastName().matches(regex)) {
-				System.out.println(player);
+				log.info(player);
 			}
 		}
 		return searchPlayerByLastNameRegex;
 	}
 
-	public static void printPlayers(ArrayList<Player> players) {
+	public static void prIntegerPlayers(ArrayList<Player> players) {
+		Logger log = Logger.getLogger(TestDriver.class);
 		for (Player player : players) {
-			System.out.println(player);
+			log.info(player);
 		}
 	}
 
@@ -115,7 +128,7 @@ public class Player {
 		this.previousTeam = previousTeam;
 	}
 
-	public int getShootingPerformance() {
+	public Integer getShootingPerformance() {
 		return shootingPerformance;
 	}
 
@@ -123,7 +136,7 @@ public class Player {
 		this.shootingPerformance = shootingPerformance;
 	}
 
-	public int getMoneyEarned() {
+	public Integer getMoneyEarned() {
 		return moneyEarned;
 	}
 
