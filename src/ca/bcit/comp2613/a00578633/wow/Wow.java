@@ -57,6 +57,8 @@ public class Wow {
 		} catch (DontHaveTheExpansionException e) {
 			e.printStackTrace();
 		}
+		
+		getLevelOfMissingCharacter();
 
 	}
 
@@ -187,19 +189,16 @@ public class Wow {
 	public static int getLevelOfMissingCharacter() {
 		ArrayList<Character> characters = myCharactersAfterMyArchNemesisHacksIntoMyAccount();
 
-		int[] val = new int[85];
-
-		for (Character character : characters) {
-			val[character.getLevel() - 1] = character.getLevel();
+		int n = 0;
+		for(int i = 85; i > 0; i--){
+			n += i;
 		}
-
-		for (int i = 0; i < 85; i++) {
-			if (val[i] == 0) {
-				return i + 1;
-			}
+		for(Character character: characters){
+			n -= character.getLevel();
 		}
-
-		return -1;
+		return n;
 	}
+	
+	
 
 }
